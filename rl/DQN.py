@@ -2,7 +2,6 @@
 # understand that this will be using concepts regarding double DQN
 # essentially, we are training one model and copying over the weights to the other model
 # libraries to be imported
-from gc import callbacks
 from matplotlib.pyplot import plot
 import tensorflow as tf
 from tensorflow.keras import optimizers, losses

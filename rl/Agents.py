@@ -6,11 +6,11 @@
 
 # libraries
 import math
-from Memory import Memory
-from DQN import DQN
+from rl.Memory import Memory
+from rl.DQN import DQN
 import numpy as np
 import random
-from helper_functions import sel_action, sel_action_index
+from rl.helper_functions import sel_action, sel_action_index
 
 
 # Agent and Random Agent Implementations

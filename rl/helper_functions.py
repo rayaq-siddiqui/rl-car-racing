@@ -6,7 +6,7 @@ import pandas as pd
 from scipy import misc
 import pickle
 import matplotlib.pyplot as plt
-from sklearn.externals import joblib
+import joblib
 
 
 huber_loss_thresh = 1

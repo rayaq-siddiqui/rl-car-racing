@@ -1,4 +1,4 @@
-from sum_tree import sum_tree
+from rl.sum_tree import sum_tree
 import random
 
 class Memory:
