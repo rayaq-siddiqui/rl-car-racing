@@ -45,7 +45,7 @@ class DQN:
         save_best = ModelCheckpoint(
             self.model_checkpoint_1,
             monitor='loss',
-            verbose=1,
+            verbose=0,
             save_best_only=True,
             mode='min',
             period=20
@@ -53,7 +53,7 @@ class DQN:
         save_per = ModelCheckpoint(
             self.model_checkpoint_2,
             monitor='loss',
-            verbose=1,
+            verbose=0,
             save_best_only=False,
             mode='min',
             period=400
@@ -85,7 +85,7 @@ class DQN:
             decay=0.0,
             amsgrad=False
         )
-        loss = losses.mse()
+        loss = losses.MeanSquaredError()
         model.compile(
             loss=loss,
             optimizer=self.optimizer
@@ -100,7 +100,7 @@ class DQN:
 
 
     # training the function itself
-    def train(self, x, y, epochs=10, verbose=1):
+    def train(self, x, y, epochs=10, verbose=0):
         self.model.fit(
             x,
             y,

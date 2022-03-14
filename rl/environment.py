@@ -36,7 +36,7 @@ class environment:
 
         # creating the constructor variables
         self.environment_name = environment_name
-        self.env = gym.make(self.environment_name)
+        self.env = gym.make('CarRacing-v0')
         envs.box2d.car_racing.WINDOW_H = 500
         envs.box2d.car_racing.WINDOW_W = 600
         self.episode = 0
@@ -95,11 +95,11 @@ class environment:
                             if self.stuck_at_local_minima >= patience_count:
                                 print('Stuck in local minimum, reset learning rate')
                                 agent.steps = 0
-                                K.set_value(agent.DQN.opt.lr,self.lr*10)
+                                K.set_value(agent.DQN.optimizer.lr,self.lr*10)
                                 self.stuck_at_local_minima = 0
                         else:
                             self.stuck_at_local_minima = max(self.stuck_at_local_minima -2, 0)
-                            K.set_value(agent.DQN.opt.lr,self.lr)
+                            K.set_value(agent.DQN.optimizer.lr,self.lr)
 
                 # perform the action on the environment
                 img_rgb, r, done, info = self.env.step(a)

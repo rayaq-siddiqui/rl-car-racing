@@ -2,7 +2,7 @@
 # the main function
 
 # ran using
-# python3 main.py --environment_name 'CarRacing-v1' --model_path 'model/' --train_mode True --test_mode False --render True --width 96 --height 96 --num_stack 4  --memory_size 10000 --batch_size 128 --max_num_episodes 500
+# python3 main.py --environment_name 'CarRacing-v0' --model_path 'model/' --train_mode True --test_mode False --render True --width 96 --height 96 --num_stack 4  --memory_size 10000 --batch_size 128 --max_num_episodes 500
 
 # libraries
 import sys
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     # using argparse to get the input variables
     parser = argparse.ArgumentParser(description='arguments')
-    parser.add_argument('--environment_name', default='CarRacing-v1')
+    parser.add_argument('--environment_name', default='CarRacing-v0')
     parser.add_argument('--model_path', help='model_path')
     parser.add_argument('--train_mode', type=bool, default=True)
     parser.add_argument('--test_mode', type=bool, default=False)
@@ -118,10 +118,10 @@ if __name__ == '__main__':
                     agent.epsilon = Params[0]
                     agent.steps = Params[1]
                     opt = Params[2]
-                    agent.DQN.opt.decay.set_value(opt['decay'])
-                    agent.DQN.opt.epsilon = opt['epsilon']
-                    agent.DQN.opt.lr.set_value(opt['lr'])
-                    agent.DQN.opt.rho.set_value(opt['rho'])
+                    agent.DQN.optimizer.decay.set_value(opt['decay'])
+                    agent.DQN.optimizer.epsilon = opt['epsilon']
+                    agent.DQN.optimizer.lr.set_value(opt['lr'])
+                    agent.DQN.optimizer.rho.set_value(opt['rho'])
                     env.reward = joblib.load(model_path+"DDQN_model.h5"+"Rewards")
                     del Params, opt
                 except:

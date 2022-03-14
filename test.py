@@ -1,8 +1,13 @@
-a = 0
-b = 10
+# import gym
 
-a = b = 5
+# env = gym.make('MountainCar-v0')
+# env.reset()
+# for _ in range(1000):
+#     env.render()
+#     env.step(env.action_space.sample()) # take a random action
+# env.close()
 
-# expecting a = 10, b = 5
-print(a,b)
-# actual a = 5, b = 5
+
+# import tensorflow as tf
+# print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+

@@ -134,7 +134,7 @@ class Agent:
         if self.steps % UPDATE_TARGET_FREQUENCY == 0:
             self.DQN.target_model_update()
         self.steps += 1
-        self.epsilon = min_eps + (self.maxEpsilone - min_eps) * np.exp(-1*_lambda_ * self.steps)
+        self.epsilon = min_eps + (self.maxEpsilon - min_eps) * np.exp(-1*_lambda_ * self.steps)
 
 
     # replay function (#3)

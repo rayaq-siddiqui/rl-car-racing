@@ -195,3 +195,4 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # folders to ignore
+model/
